@@ -1,0 +1,108 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1em;
+    font-family: "Be Vietnam", sans-serif;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    background-color: #111729;
+    background-image: url(./assets/bg-illustration.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    margin: 1em auto;
+    border-radius: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    padding: 1.5em 0.75em;
+    border-radius: 1em;
+    border: 4px solid #3662E3;
+    background-color: #111729;
+    color: #F2F5F9;
+}
+
+::placeholder {
+    color: #364153;
+    font: inherit;
+}
+
+.btn {
+    cursor: pointer;
+    color: #F2F5F9;
+    background-color: #3662E3;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+}
+
+.download-btn, .share-btn {
+    padding: 1.25em 2.25em;
+    border-radius: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 0.75em 2em;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+}
+
+.container {
+    padding: 1em;
+    min-width: 37rem;
+}
+
+form {
+    position: relative;
+}
+
+.btn-container {
+    display: none;
+}
+
+.btn-container.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-block: 8em;
+}
+
+.code-container {
+    position: relative;
+}
+
+.code-container.active::before {
+    content: "";
+    position: absolute;
+    top: -7em;
+    left: 3em;
+    width: 29em;
+    height: 29em;
+    background-color: #1e2c51;
+    z-index: -1;
+    border-radius: 50%;
+}

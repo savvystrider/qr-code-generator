@@ -17,7 +17,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
@@ -27,7 +27,12 @@
           <img src="./assets/logo-qr-generator.svg" alt="" aria-hidden="true" />
         </h1>
         <form>
-          <input type="text" id="qr-code-input" class="qr-code-input" />
+          <input
+            type="text"
+            id="qr-code-input"
+            class="qr-code-input"
+            placeholder="Enter a URL"
+          />
           <button type="submit" id="submit-btn" class="btn submit-btn">
             QR code
           </button>
@@ -35,8 +40,12 @@
         <div class="code-output" id="code-output">
           <div class="code-container" id="code-container"></div>
           <div class="btn-container">
-            <button id="download-btn" class="btn download-btn">Download</button>
-            <button id="share-btn" class="btn share-btn">Share</button>
+            <button id="download-btn" class="btn download-btn">
+              Download <i class="fa-solid fa-arrow-down"></i>
+            </button>
+            <button id="share-btn" class="btn share-btn">
+              Share <i class="fa-solid fa-link"></i>
+            </button>
           </div>
         </div>
       </div>

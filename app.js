@@ -2,6 +2,7 @@ const textInput = document.getElementById("qr-code-input");
 const submitBtn = document.getElementById("submit-btn");
 const form = document.querySelector("form");
 const codeContainer = document.getElementById("code-container");
+const btnContainer = document.querySelector(".btn-container");
 const downloadBtn = document.getElementById("download-btn");
 const shareBtn = document.getElementById("share-btn");
 
@@ -17,6 +18,9 @@ function getQRCode(url) {
   codeContainer.innerHTML = "";
   const qrCode = new QRCode(codeContainer, url);
   codeContainer.querySelector("img").setAttribute("id", "qr-code-image");
+  form.style.display = "none";
+  btnContainer.classList.add("active");
+  codeContainer.classList.add("active");
 }
 
 function downloadCode() {

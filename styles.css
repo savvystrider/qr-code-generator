@@ -106,3 +106,15 @@ form {
     z-index: -1;
     border-radius: 50%;
 }
+
+.code-container.active::after {
+    content: "";
+    position: absolute;
+    top: -6%;
+    left: 24.5%;
+    width: 18em;
+    height: 18em;
+    background-color: white;
+    z-index: -1;
+    border-radius: 10%;
+}

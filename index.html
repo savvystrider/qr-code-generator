@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <div class="container">
+        <h1 class="sr-only">
+          QR Code Generator
+          <img src="./assets/logo-qr-generator.svg" alt="" aria-hidden="true" />
+        </h1>
+        <form>
+          <input type="text" id="qr-code" class="qr-code-input" />
+          <label for="qr-code">QR code</label>
+        </form>
+        <div class="code-output" id="code-output">
+          <div class="code-container" id="code-container"></div>
+          <div class="btn-container">
+            <button id="download-btn" class="btn download-btn">Download</button>
+            <button id="share-btn" class="btn share-btn">Share</button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
       integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="

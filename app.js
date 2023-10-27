@@ -37,17 +37,29 @@ function downloadCode() {
 downloadBtn.addEventListener("click", downloadCode);
 
 function copyCode() {
-  let selection = window.getSelection();
+  const qrCodeImg = document.querySelector("#qr-code-image");
 
-  if (selection.rangeCount > 0) {
-    selection.removeAllRanges();
+  if (qrCodeImg) {
+    fetch(qrCodeImg.src)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const clipboardItem = new ClipboardItem({
+          "image/png": blob,
+        });
+
+        navigator.clipboard
+          .write([clipboardItem])
+          .then(() => {
+            alert("QR code successfully copied!");
+          })
+          .catch((error) =>
+            console.error("Error copying image to clipboard: ", error)
+          );
+      })
+      .catch((error) =>
+        console.error("Error copying image to clipboard: ", error)
+      );
   }
-
-  const range = document.createRange();
-  range.selectNode(codeContainer);
-  selection.addRange(range);
-  document.execCommand("copy");
-  selection.removeAllRanges();
 }
 
 shareBtn.addEventListener("click", copyCode);

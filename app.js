@@ -3,9 +3,11 @@ const submitBtn = document.getElementById("submit-btn");
 const form = document.querySelector("form");
 const codeContainer = document.getElementById("code-container");
 const downloadBtn = document.getElementById("download-btn");
+const shareBtn = document.getElementById("share-btn");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   if (textInput.value !== "") {
     getQRCode(textInput.value);
   }
@@ -19,6 +21,7 @@ function getQRCode(url) {
 
 function downloadCode() {
   const qrCodeImg = document.querySelector("#qr-code-image");
+
   if (qrCodeImg) {
     const link = document.createElement("a");
     link.href = qrCodeImg.src;
@@ -28,3 +31,19 @@ function downloadCode() {
 }
 
 downloadBtn.addEventListener("click", downloadCode);
+
+function copyCode() {
+  let selection = window.getSelection();
+
+  if (selection.rangeCount > 0) {
+    selection.removeAllRanges();
+  }
+
+  const range = document.createRange();
+  range.selectNode(codeContainer);
+  selection.addRange(range);
+  document.execCommand("copy");
+  selection.removeAllRanges();
+}
+
+shareBtn.addEventListener("click", copyCode);
